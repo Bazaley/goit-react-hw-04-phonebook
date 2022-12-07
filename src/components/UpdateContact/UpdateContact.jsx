@@ -11,7 +11,6 @@ const UpdateContact = ({ contactId, contactName, onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log(name);
     onSubmit(contactId, name);
   };
 
