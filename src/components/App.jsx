@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useLocalStorage } from 'hooks/useLocalStorage';
 import { nanoid } from 'nanoid';
 import { Section } from './Section/Section';
 import { Contacts } from './Contacts/Contacts';
@@ -7,15 +8,9 @@ import { Notification } from './Notification/Notification';
 import Form from './Form/Form';
 
 const App = () => {
-  const [contacts, setContacts] = useState([
-    ...JSON.parse(localStorage.getItem('contacts')),
-  ]);
+  const [contacts, setContacts] = useLocalStorage('contacts');
   const [filter, setFilter] = useState('');
   const [userUpdate, setUserUpdate] = useState(null);
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   const formSubmitHandler = (name, number) => {
     const contact = contacts.some(contact => contact.name === name);
