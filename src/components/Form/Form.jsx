@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
 import { FormTag, Input, Label, Button } from './Form.styled';
 
@@ -62,3 +64,7 @@ const Form = ({ onSubmit }) => {
 };
 
 export default Form;
+
+Form.propTypes = {
+  onSubmit: PropTypes.func,
+};

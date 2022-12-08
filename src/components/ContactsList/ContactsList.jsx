@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { Tr, Td, Button } from './ContactsList.styled';
 import UpdateContact from '../UpdateContact/UpdateContact';
 
@@ -38,4 +40,12 @@ export const ContactsList = ({
       })}
     </tbody>
   );
+};
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+  renameContact: PropTypes.func.isRequired,
+  userUpdate: PropTypes.string,
+  onSubmit: PropTypes.func.isRequired,
 };

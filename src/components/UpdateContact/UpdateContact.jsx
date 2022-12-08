@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
 
 const UpdateContact = ({ contactId, contactName, onSubmit }) => {
@@ -32,3 +34,9 @@ const UpdateContact = ({ contactId, contactName, onSubmit }) => {
 };
 
 export default UpdateContact;
+
+UpdateContact.propTypes = {
+  contactId: PropTypes.string,
+  contactName: PropTypes.string,
+  onSubmit: PropTypes.func,
+};
